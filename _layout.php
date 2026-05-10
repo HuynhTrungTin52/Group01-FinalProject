@@ -1,12 +1,12 @@
 <?php
 // _layout.php - Shared HTML head, sidebar, topbar. Included by every admin page.
+// Expects: $pageTitle (string), $activeNav (string: 'dashboard'|'users'|'transactions')
 if (!isset($activeNav)) $activeNav = 'dashboard';
 if (!isset($pageTitle)) $pageTitle = 'Admin';
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" href="logo/logo.jpeg">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?= htmlspecialchars($pageTitle) ?> • Admin</title>
@@ -182,23 +182,3 @@ if (!isset($pageTitle)) $pageTitle = 'Admin';
         </div>
       </div>
       <div class="content">
-    <div class="d-flex" style="min-height: 100vh;">
-
-        <div class="sidebar d-flex flex-column" style="width: 250px;">
-            
-            <a href="admin_dashboard.php" class="brand text-white text-decoration-none mb-4 d-flex align-items-center">
-                <img src="logo/logo.png" alt="Logo" width="40" class="me-2"> 
-                E-Wallet
-            </a>
-
-            <nav class="nav flex-column">
-                <a class="nav-link text-white <?= ($activeNav == 'dashboard') ? 'fw-bold' : '' ?>" href="admin_dashboard.php">
-                    <i class="bi bi-house-door me-2"></i> Dashboard
-                </a>
-                <a class="nav-link text-white <?= ($activeNav == 'users') ? 'fw-bold' : '' ?>" href="manage_users.php">
-                    <i class="bi bi-people me-2"></i> Users
-                </a>
-                </nav>
-        </div>
-
-       
